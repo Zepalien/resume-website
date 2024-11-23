@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extra Curriculum</title>
+    <!-- Add Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: linear-gradient(to bottom, #1c024c, #03031b);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 50px;
+        }
+
+        /* Carousel Section */
+        .carousel {
+            position: relative;
+            max-width: 50%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        /* Carousel Images */
+        .carousel img {
+            width: 100%;
+            display: none; /* Hide all images initially */
+        }
+
+        .carousel img.active {
+            display: block; /* Only show the active image */
+        }
+
+        /* Next and Previous Buttons */
+        .carousel .prev, .carousel .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 3px;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+
+        .carousel .prev {
+            left: 5px;
+        }
+
+        .carousel .next {
+            right: 5px;
+        }
+
+        /* Dot Indicators */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+
+         .videos-container {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+	    margin-top: 40px;
+        }
+
+        .video-box {
+            background-color: #3e0029;
+            flex: 1;
+            height: 150px; /* Placeholder height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .paragraph-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #3e0029; /* Added background color */
+            margin-top: 40px; /* Added some spacing */
+        }
+
+        .paragraph-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .paragraph-section li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+	.back-button {
+    margin-top: 5px;
+    border: none;
+    color: white;
+    background-color: #3e0029; /* Default green color */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px; /* Optional: Adds rounded corners */
+}
+
+.back-button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Center the button */
+.center-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 10vh; /* Full viewport height to center vertically */
+}
+
+
+      /* Footer */
+footer {
+    margin-top: 30px;
+    background-color: #3e0029;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping to ensure layout is responsive */
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center; /* Centers icons horizontally */
+    align-items: center; /* Ensures icons are vertically centered */
+    gap: 15px;
+    margin-top: 10px; /* Optional: Adds spacing from other footer elements */
+    width: 100%; /* Ensure the container spans the full width */
+}
+
+.social-media a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #bbb;
+}
+
+.header-container {
+    background-image: url('bg2.png'); /* Replace with your actual image file path */
+    background-size: cover; /* Ensures the image covers the container */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    height: 150px; /* Adjust height based on your preference */
+    display: flex; /* Aligns text */
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    color: white; /* Text color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Adds shadow to the text */
+    font-size: 2rem; /* Adjust text size */
+    font-family: Arial, sans-serif; /* Set your preferred font */
+}
+
+    </style>
+</head>
+<body>
+   <div class="header-container">
+    <h4>-Extra Curriculum-</h4>
+</div>
+	<center><h2 style="font-family:Copperplate; color:red;">Komander Kesatria</h2></center>
+        <p class="subtitle">"Once Commander, Always Commander"</p>
+	
+	<div style="text-align: center;">
+    <audio controls>
+        <source src="gods.ogg" type="audio/ogg">
+        <source src="gods.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+
+
+        <!-- Image Carousel Section -->
+        <div class="carousel">
+            <img src="kom1.jpg" class="active" alt="Kom1">
+            <img src="kom2.jpg" alt="Kom2">
+            <img src="kom3.jpg" alt="Kom3">
+            <img src="kom4.jpg" alt="Kom4">
+            <img src="kom5.jpg" alt="Kom5">
+            <img src="kom6.jpg" alt="Kom6">
+            <img src="kom7.jpg" alt="Kom7">
+            <img src="kom8.jpg" alt="Kom8">
+            <img src="kom9.jpg" alt="Kom9">
+            <img src="kom10.jpg" alt="Kom10">
+            <img src="kom11.jpg" alt="Kom11">
+            <img src="kom12.jpg" alt="Kom12">
+            <img src="kom13.jpg" alt="Kom13">
+            <img src="kom14.jpg" alt="Kom14">
+            <img src="kom15.jpg" alt="Kom15">
+            <img src="kom16.jpg" alt="Kom16">
+	    <img src="kom17.jpg" alt="Kom17">
+            <img src="kom18.jpg" alt="Kom18">
+            <img src="kom19.jpg" alt="Kom19">
+	    <img src="top.jpg" alt="TOP">
+
+
+            <!-- Next and Previous Buttons -->
+            <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+            <span class="next" onclick="changeSlide(1)">&#10095;</span>
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="dots">
+            <!-- The dots will be dynamically added via JavaScript -->
+        </div>
+
+        <!-- Videos Section -->
+        <div class="videos-container">
+            <!-- Video 1 -->
+            <div class="video-box">
+                <video width="100%" height="auto" controls>
+                    <source src="vid1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Video 2 -->
+            <div class="video-box">
+                <video width="100%" height="auto" controls>
+                    <source src="vid2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- Video 3 -->
+            <div class="video-box">
+                <video width="100%" height="auto" controls>
+                    <source src="vid3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Carousel functionality -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel img");
+        const dotsContainer = document.querySelector(".dots");
+
+        // Create dot indicators dynamically based on the number of slides
+        slides.forEach((_, index) => {
+            const dot = document.createElement("span");
+            dot.classList.add("dot");
+            dot.addEventListener("click", () => setSlide(index));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        // Function to Show Slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                dots[i].classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                    dots[i].classList.add("active");
+                }
+            });
+        }
+
+        // Change Slide Function (for next/previous buttons)
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Set Slide Function (for dot indicators)
+        function setSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Automatic Slide Change
+        setInterval(() => {
+            changeSlide(1);
+        }, 3000); // Change image every 3 seconds
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+<!-- Paragraph Section -->
+    <div class="paragraph-section">
+        <p>I contribute a few things while joining this organization. Such as:</p>
+        <ul>
+            <li>Become an emcee for an event.</li>
+            <li>Become a Project Leader for outdoor events for curricular students (Get Xtreme With SISBOM).</li>
+            <li>Become a leader in marching for curriculum events (PERKOM KO) for company SISBOM.</li>
+            <li>Lead aerobics for big events (Uni Nature Run 3.0@Segamat).</li>
+            <li>Participate in Hakka performances for big events that contribute to Southern Volunteers.</li>
+            <li>Manage to get promoted as Komander Madya and manage new intake for Komander Kesatria.</li>
+        </ul>
+    </div>
+ <div class="center-container">
+    <a href="file:///C:/Users/User/OneDrive/Documents/imd318/achievement.html" class="back-button">Back</a>
+</div>
+
+
+     <!-- Footer -->
+    <footer>
+        <!-- Social Media Icons -->
+        <div class="social-media">
+    <a href="https://www.facebook.com/JengkingJohorVI" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/jengking_johor/?hl=en" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@komanderjohor9912" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://jengkingjohor.blogspot.com/" target="_blank"><i class="fas fa-blog"></i></a>
+</div>
+    </footer>
+</body>
+</html>

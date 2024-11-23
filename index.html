@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AULYANABILA- Resume</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1; /* Light gray background */
+            color: #333;
+	    color: white; /* Default font color */
+            display: flex;
+            flex-direction: row;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #2C3E50; /* Deep Royal Blue */
+            padding: 20px;
+            width: 200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 12px 18px;
+            text-decoration: none;
+            color: #F1F1F1; /* Light font color */
+            text-align: center;
+            margin: 8px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            font-size: 14px; /* Smaller font size */
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Each nav link gets a different calm royal background color */
+        nav a:nth-child(1) {
+            background-color: #2C3E50; /* Deep Royal Blue */
+        }
+
+        nav a:nth-child(2) {
+            background-color: #A9BBA7; /* Sage Green */
+        }
+
+        nav a:nth-child(3) {
+            background-color: #4C6A72; /* Soft Teal */
+        }
+
+        nav a:nth-child(4) {
+            background-color: #D1D1D1; /* Light Grey */
+        }
+
+        nav a:nth-child(5) {
+            background-color: #0f5a5e; /* Slate Gray */
+        }
+
+        /* Main Content (to the right of the navigation bar) */
+        .container {
+            margin-left: 220px; /* Space for the navigation bar */
+            width: 80%;
+            padding: 20px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 14px; /* Smaller font size */
+        }
+
+        /* Background Colors for Each Section */
+        #about {
+            background-color: #D4AF37; /* Muted Gold for About Me */
+        }
+
+        #experience {
+            background-color: #A9BBA7; /* Sage Green */
+        }
+
+        #education {
+            background-color: #4C6A72; /* Soft Teal */
+        }
+
+        #skills {
+            background-color: #D1D1D1; /* Light Grey */
+        }
+
+        #contact {
+            background-color: #0f5a5e; /* Slate Gray */
+        }
+    /* Header Section with Background Image */
+    header {
+    	position: relative;
+    	height: 150px;
+    	color: #fff;
+    	text-align: center;
+    	overflow: hidden;
+    	border: 5px solid #D3D3D3; /* Add border */
+       	padding: 10px; /* Adjust padding to create space between the border and content */
+	}
+
+
+        header::before {
+            content: "";
+            background-image: url('bg5.png'); /* Replace with your header image path */
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: filter 0.3s ease;
+        }
+
+        /* Blurring the Background on Scroll */
+        body.scrolled header::before {
+            filter: blur(8px);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 5px 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C3E50; /* Deep Royal Blue */
+            color: #F1F1F1;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 12px; /* Smaller font size for footer */
+        }
+ 	/* Passport Photo */
+        .passport-photo {
+            width: 132px; /* Width in pixels for passport size */
+            height: 170px; /* Height in pixels for passport size */
+            object-fit: cover; /* Ensures the image fills the dimensions without distortion */
+            border: 2px solid #333; /* Optional: add border */
+            border-radius: 5px; /* Optional: slightly round corners */
+            margin-top: 20px; /* Optional: add space above image */
+        }
+	/* Carousel Container */
+        .carousel {
+            position: relative;
+            max-width: 300px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        /* Carousel Images */
+        .carousel img {
+            width: 100%;
+            display: none; /* Hide all images initially */
+        }
+
+        /* Show the first image */
+        .carousel img.active {
+            display: block;
+        }
+
+        /* Next and Previous Buttons */
+        .carousel .prev, .carousel .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            padding: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 3px;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+
+        .carousel .prev {
+            left: 5px;
+        }
+
+        .carousel .next {
+            right: 5px;
+        }
+
+        /* Dot Indicators */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot.active {
+            background-color: #717171;
+        }
+         .skill-container {
+            margin: 20px 0;
+        }
+        .skill-label {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: black;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar {
+            height: 25px;
+            background-color: #4CAF50;
+            text-align: right;
+            line-height: 25px;
+            color: white;
+            font-weight: bold;
+            padding-right: 10px;
+        }
+        .progress-bar.html { width: 70%; background-color: #2196F3; } /* Blue */
+        .progress-bar.css { width: 80%; background-color: #f44336; } /* Red */
+        .progress-bar.javascript { width: 90%; background-color: #FFC107; } /* Yellow */
+        
+         h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white; /* White font for the heading */
+        }
+        .more-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .more-button:hover {
+            background-color: #45a049;
+        }
+      </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Header -->
+        <header>
+            <h1>AULYANABILA BINTI ANUAR</h1>
+            <p>CDIM110 | IMD 318 | RESUME</p>
+        </header>
+	<center><img src="aulya.jpg" class="passport-photo" alt="aulya"></center>
+
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Assalamualaikum and hi there!
+
+My name is Aulyanabila Binti Anuar, you can call me Aulya or Bella but I prefer you to contact me Aulya because it has a nice meaning behind it. My wish is I hope I can do my best in everything that I cherish. I hope that my youth will not go in vain even when I'm focusing on my studies. To be in my dream university is already blissful as it is so I hope I can do well happily. Communicating and trying to blend in with people is already hard enough though, but I always have that one mindset which is "if we think we are unlucky, believe or not there's going to be so many people who are unluckier than us". When we have that one mindset, we can face any problem in a good way.
+
+Aulya was born on September 30 2004, in Hospital Temenggong, Kulai, Johor. Her family consists of her parents and 6 other siblings. Aulya attended Sekolah Kebangsaan Taman Kota Kulai Elementary School, Sekolah Menengah Kebangsaan Sultan Ibrahim High School, and continuing her studies at Universiti Teknologi Mara Segamat (UiTM). 
+
+<ul><b>FATHER :</b>                                                                                          
+<li>ANUAR BIN MAT ARIFFIN</li>
+<li>016-7568671</li>
+</ul>
+
+<ul><b>MOTHER :</b>
+<li>ELYAWATI BINTI YUSGAN</li>
+<li>011-63743426</li>
+</ul>
+
+<ul><b>SIBLINGS</b>
+<li>ANELYANATSYA BINTI ANUAR</li>
+<li>EMYLYANAZIRA BINTI ANUAR</li>
+<li>ANASOFIYA BINTI ANUAR</li>
+<li>AULYANABILA BINTI ANUAR</li>
+<li>ARYA RABBANI PUTRA BIN ANUAR</li>
+<li>AMANI UMAIRAH ZAHRAA BINTI ANUAR</li></ul></p>
+<button onclick="window.location.href='family.jpg'" style="padding: 10px 20px; background-color: #2C3E50; color: #F1F1F1; border: none; border-radius: 5px; cursor: pointer;">
+    View Family Photo
+</button>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <ul>
+                <li><strong>Student - Information Management CDIM110)</strong>
+<p>Throughout my experience as an active student, I've consistently delivered impactful results, spearheading groundbreaking projects that have propelled my team to new heights. My biggest achievements include getting good grades while managing big and small events on my curriculum activities, showcasing my ability to innovate and drive success. My unique blend of creativity, strategic thinking, and problem-solving prowess sets me apart. Whether it's optimizing processes or cultivating strong client relationships, I thrive on tackling challenges head-on. My exceptional communication skills and knack for fostering collaboration across multidisciplinary teams have been instrumental in achieving organizational goals. I am excited to bring my passion, drive, and proven track record of success to any team.
+                </li>
+                <li><strong>Employment History:</strong> Manager and Salesperson, Streect Crew Restaurant, Kulai</p>
+		<ul  style="list-style-type:square;">
+		<li>Set up and broke down banquet tables and chairs quickly and efficiently, ensuring that all events started and ended on time</li>
+		<li>Develop and implement health and safety policies that ensure a safe and secure workplace for staff and customers</li>
+		<li>Created and implemented a set of internal controls to ensure accurate and timely financial reporting and reduce the risk of fraud and errors</li>
+                <li>Established and maintained relationships with external vendors and suppliers, resulting in improved quality and delivery of products and services</li>
+            </ul>
+<a href="https://streetcrewrestaurant.com/" target="_blank">Click here to visit Street Crew Kulai</a>
+
+ <!-- Image Carousel -->
+            <div class="carousel">
+                <img src="image1.jpg" class="active" alt="Image 1">
+                <img src="image2.jpg" alt="Image 2">
+                <img src="image3.jpg" alt="Image 3">
+                
+                <!-- Next and Previous Buttons -->
+                <span class="prev" onclick="changeSlide(-1)">&#10094;</span>
+                <span class="next" onclick="changeSlide(1)">&#10095;</span>
+            </div>
+
+            <!-- Dot Indicators -->
+            <div class="dots">
+                <span class="dot active" onclick="setSlide(1)"></span>
+                <span class="dot" onclick="setSlide(2)"></span>
+                <span class="dot" onclick="setSlide(3)"></span>
+            </div>
+        </section>
+
+<section id="education" class="section">
+    <h2>Education</h2>
+    <style>
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border-style: double;
+        }
+        th {
+            font-weight: bold;
+            text-align: center;
+            background-color: #f2f2f2; /* Light gray background for headers */
+            padding: 10px;
+            color: black; /* Ensures header text is black */
+        }
+        td {
+            text-align: center; /* Center-align text in cells */
+            padding: 10px;
+            background-color: #eaf6ff; /* Light blue background for cells */
+            color: black; /* Ensures table cell text is black */
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        /* Modal styling */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+        }
+        .modal-content {
+            margin: 10% auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            position: relative;
+        }
+        .modal-content img {
+            max-width: 100%;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+        }
+        .close {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            cursor: pointer;
+            background-color: red;
+            padding: 5px 10px;
+            border-radius: 50%;
+        }
+        .close:hover {
+            background-color: darkred;
+        }
+        /* Button styling */
+        .gallery-button-container {
+            text-align: center; /* Center the button container */
+            margin-top: 20px; /* Add some spacing above the button */
+        }
+        .gallery-button,
+        .achievement-button {
+            margin: 10px; /* Space between buttons */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+        }
+        .gallery-button {
+            background-color: #4CAF50; /* Green color */
+        }
+        .gallery-button:hover {
+            background-color: #45a049;
+        }
+        .achievement-button {
+            background-color: #007bff; /* Blue color */
+        }
+        .achievement-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Primary School</th>
+            <th>Secondary School</th>
+            <th>University</th>
+        </tr>
+        <tr>
+            <th>Education</th>
+            <td>SK Kota Kulai</td>
+            <td>SMK Sultan Ibrahim</td>
+            <td>UiTM</td>
+        </tr>
+        <tr>
+            <th>Achievement</th>
+            <td>UPSR - 3A's</td>
+            <td>SPM - 7A's</td>
+            <td>CGPA - 3.67</td>
+        </tr>
+    </table>
+    <div class="gallery-button-container">
+        <button class="gallery-button" onclick="openModal()">School Gallery</button>
+        <a href="file:///C:/Users/User/OneDrive/Documents/imd318/achievement.html" class="achievement-button">Achievement</a>
+    </div>
+
+    <!-- Modal -->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>School Gallery</h3>
+            <img src="sch1.jpg" alt="School 1">
+            <img src="sch2.jpg" alt="School 2">
+            <img src="sch3.jpg" alt="School 3">
+            <img src="sch4.jpg" alt="School 4">
+            <img src="sch5.jpg" alt="School 5">
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('galleryModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('galleryModal').style.display = 'none';
+        }
+    </script>
+</section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2>My Skills</h2>
+    <div class="skill-container">
+        <div class="skill-label">Technical Skills - Database management, Data analysis</div>
+        <div class="progress-container">
+            <div class="progress-bar html">70%</div>
+        </div>
+    </div>
+    <div class="skill-container">
+        <div class="skill-label">Soft Skills - Problem solving, Communication</div>
+        <div class="progress-container">
+            <div class="progress-bar css">80%</div>
+        </div>
+    </div>
+    <div class="skill-container">
+        <div class="skill-label">Additional Skills - Customer service, Digital archiving</div>
+        <div class="progress-container">
+            <div class="progress-bar javascript">90%</div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>Email: aulyanabila.bella@gmail.com</p>
+            <p>Phone: 011-28684469</p>
+            <a href=" https://www.linkedin.com/in/aulya-anuar-b2518633a/" target="_blank">LinkedIn</a>
+            <p class="contact-text">If you'd like to learn more about me, feel free to explore further!</p>
+        <a href="https://linktr.ee/aulyanabila.bella" class="more-button" target="_blank">More</a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 zepalien. All rights reserved.</p>
+    </footer>
+  <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".carousel img");
+        const dots = document.querySelectorAll(".dot");
+
+        // Function to Show Slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove("active");
+                dots[i].classList.remove("active");
+                if (i === index) {
+                    slide.classList.add("active");
+                    dots[i].classList.add("active");
+                }
+            });
+        }
+
+        // Change Slide Function (for next/previous buttons)
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Set Slide Function (for dot indicators)
+        function setSlide(index) {
+            currentSlide = index - 1;
+            showSlide(currentSlide);
+        }
+
+        // Automatic Slide Change
+        setInterval(() => {
+            changeSlide(1);
+        }, 3000); // Change image every 3 seconds
+    </script>
+</body>
+</html>
