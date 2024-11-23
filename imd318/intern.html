@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internship</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2c365d;
+            color: #f8f6e7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        h2 {
+            font-size: 2em;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        audio {
+            margin: 20px 0;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .block {
+            background-color: #f8f6e7;
+            color: #2c365d;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .block.large {
+            width: 400px;
+            height: 230px;
+        }
+
+      .block.medium {
+        width: 400px;
+        height: 300px; /* Set a fixed height for proper centering */
+        font-size: 13px; /* Adjust this for smaller font */
+        line-height: 1.5; /* Adjust line spacing */
+        text-align: center; /* Horizontal centering */
+        display: flex; /* Flexbox for centering */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        padding: 10px; /* Add padding for spacing */
+        box-sizing: border-box; /* Include padding in dimensions */
+    }
+
+     .block.small {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        .block.small img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .block.small .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s ease;
+        }
+
+        .block.small:hover .description {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .block.small:hover img {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        footer {
+            background-color: #f8f6e7;
+            color: #2c365d;
+            padding: 10px;
+            text-align: center;
+        }
+     footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #f8f6e7;
+        color: #2c365d;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .back-button:hover {
+        background-color: #e0dcc1;
+    }
+     .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            background-color:#2c365d;
+            padding: 10px 0;
+        }
+        .flower-marquee {
+            display: flex;
+            animation: scrollFlowers 20s linear infinite;
+        }
+        .flower-marquee img {
+            width: 20px; /* Adjust flower image size */
+            margin-right: 20px;
+        }
+
+        @keyframes scrollFlowers {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+<marquee direction="left" scrollamount="7" behavior="scroll">
+    ( ◡̀_◡́)ᕤ Let me tell you my journey! 💭
+</marquee>
+
+<a href="file:///C:/Users/User/OneDrive/Documents/imd318/achievement.html" class="back-button">Back</a>
+    
+<div class="container">
+        <h1>👩🏻‍💻Internship👩🏻‍💻</h1>
+        <h2>Journey</h2>
+        <audio autoplay>
+            <source src="C:\Users\User\OneDrive\Documents\imd318\gods.mp3" type="audio/mpeg">
+   	Your browser does not support the audio element.
+        </audio>
+
+        <div class="content">
+            <div class="block large">
+		<img src="ppd.jpg" alt="ppd" style="width: 400%; max-width: 400px; height: auto;">
+	    </div>
+            <div class="block medium">During this training, I was given specific responsibilities such as managing student transfers within the district of Kulai, interacting with parents regarding necessary procedures in the student transfer process, and overseeing the opening and closing of files. I also handled front counter services, served as a secretariat for various programs (supporting both pre-event and live activities), trained other interns in procedures, implemented improvements within the sector, and assisted officers in enhancing their systems.</div>
+🎧
+<audio controls>
+  <source src="intern.ogg" type="audio/ogg">
+  <source src="intern.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>🎧
+
+
+<div style="text-align: center;">
+    <img src="intern.gif" alt="Internship Animation" style="width: 70%; max-width: 400px; height: auto;">
+</div>
+ <div class="content">
+            <div class="block small">
+                <img src="i1.jpg" alt="intern1">
+                <div class="description">Joining competition between department.</div>
+            </div>
+            <div class="block small">
+                <img src="i2.jpg" alt="intern2">
+                <div class="description">Make minutes letter.</div>
+            </div>
+            <div class="block small">
+                <img src="i3.jpg" alt="intern3">
+                <div class="description">Make backdrop for event.</div>
+            </div>
+            <div class="block small">
+                <img src="i4.jpg" alt="intern4">
+                <div class="description">Becoming help centre for system's users.</div>
+            </div>
+            <div class="block small">
+                <img src="i5.jpg" alt="intern5">
+                <div class="description">Ckick in data students.</div>
+            </div>
+            <div class="block small">
+                <img src="i6.jpg" alt="intern6">
+                <div class="description">Decorating department.</div>
+            </div>
+            <div class="block small">
+                <img src="i7.jpg" alt="intern8">
+                <div class="description">Make preparation for event.</div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <p>&copy; 2024 Zepalien. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
